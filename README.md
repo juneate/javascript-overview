@@ -1,4 +1,4 @@
-# JavaScript Basics
+# JavaScript Cheatsheet
 
 Here we will keep an ongoing list of the logic and code we explore/review in class, categorized by topic.
 
@@ -7,13 +7,15 @@ Here we will keep an ongoing list of the logic and code we explore/review in cla
 - Multi-line comments: `/* comment! */`
 
 ## Data types
-In Javascript there are *eight* data types (seven "primitive" data types, plus `Object` - more on that later). The primitive types that are most recognizable to us are: `Number`, `String` and `Boolean`
+In Javascript there are *eight* data types (seven "primitive" data types, plus `Object` - more on that later). The three primitive types that are most recognizable to beginners are: `Number`, `String` and `Boolean`:
+
 ```javascript
-12345.67       // Number
-'Hello world'  // String ('', ``, or "")
+12345.67       // Number (integer, decimal, positive or negative)
+'Hello world'  // String ('', "", or ``)
 true           // Boolean (true or false)
 ```
-Other primitive data types of note are: `null` and `undefined`
+
+[Read more on Data Types](./02-data-types/)
 
 ## Arithmetic operators
 Will perform some mathematical operation with numbers
@@ -84,18 +86,18 @@ The variable an Object is assigned to is actually holding a _reference_ to the O
 Arrays, like Object literals, allow multiple values to be stored in a single structure. However, array values are indexed, rather than named.
 
 ```javascript
-const hiddenFigures = {
+const hiddenFigures = [
   'Dorothy Vaughan', 
   'Katherine G. Johnson',
   'Mary Jackson'
-}
+]
 ```
 
 As with Objects, the variable that Arrays are assigned to, hold a _reference_ to the Array, not the Array itself.
 
 ## Conditions
 
-Coming soon: control satements, ternary, case/switch statements
+Coming soon: control statements, ternary, case/switch statements
 
 ## Loops
 
@@ -165,3 +167,11 @@ Replace `ele` with a reference to the element you want to make clickable, and pl
 ele.addEventListener('click', event => {  })
 ```
 A list of [some comment Event types can be found here](https://developer.mozilla.org/en-US/docs/Web/Events).
+
+
+## Libraries
+
+### String
+
+
+### Array
