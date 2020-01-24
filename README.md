@@ -57,7 +57,7 @@ String surrounded by back-ticks (`` ` ``) can contain expressions within it by u
 
 ```javascript
 let name = 'Alan Turing'
-let question = `Hey ${name}, can machines think?`
+`Hey ${name}, can machines think?`  // Hey, Alan Turing, can machines think?
 ```
 
 [Read more on template literals](./05-template-literals/)
@@ -163,34 +163,39 @@ Math.floor(5.5)  // 5, floor always rounds down
 Refer to the entire live browser page with: `document`. From there, you can search for elements that exist and manipulate them. 
 
 ### Select a single element
+
 ```javascript
-document.getElementById('heading')  // Finds HTML element with id="heading"
-document.querySelector('.heading')  // Finds *first* HTML element with class="heading"
+document.getElementById('submitBtn')  // Finds the HTML element with id="submitBtn"
+document.querySelector('.btn')  // Finds only the *first* HTML element with class="btn"
 ```
-Returns a reference to the first matching Element found, or `null` if a match is not found
+
+Returns a reference to the first matching Element found, or `null` if a match is not found. Element references can be stored into variables for recall.
+
 
 ### Selecting multiple elements at once
 ```javascript
-document.querySelectorAll('.heading')  // Finds *all* HTML element with class="heading"
+document.querySelectorAll('.btn')  // Finds *all* HTML elements with class="btn"
 ```
-Will store the found Element references in an array-like structure. To work with the resulting elements, you would typically iterate over them using a loop of some type, just as you would an Array:
+Will store the found Element references in an array-like structure. To work with the resulting elements, iterate over them using a loop, just as you would an Array:
 
 ```javascript
-const allHeadings = document.querySelectorAll('.heading')  // Select all ".heading" elements
+const allButtons = document.querySelectorAll('.btn')  // Select all ".btn" elements
 
-allHeadings.forEach(h => {
-  // Each "heading" Element is now referred to as "h" one-by-one because we said so above
+allButtons.forEach(aBtn => {
+  // Each ".btn" Element is now referred to as "aBtn" one-by-one because we declared it so in this function definition (above)
 })
 ```
 
 
 ### Common element properties
 
-Each elements in a document (an Object of type `Element` in JavaScript) has specific properties and methods defined that allows it to be modified at any time, in real time.
+Each elements in a document (an Object of type `Element` in JavaScript) has specific properties and methods defined that allows it to be modified at any time, in real time. 
 
-Assuming `ele` is a reference to the Element in the document, here are a few properties or methods to perform common actions.
+For example, given an element (HTML) structured as such: `<h1 class="heading"></h1>`. After selecting the element (store the reference as `ele`), here are a few properties or methods to perform common actions.
 
 ```javascript
+const ele = document.querySelector('.heading')  // Select an element, store the reference
+
 // Modify the content between the opening/closing tags (treat HTML as text)
 ele.textContent = `Hello, world!`
 
