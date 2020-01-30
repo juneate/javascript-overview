@@ -159,10 +159,15 @@ Math.floor(5.5)  // 5, floor always rounds down
 [Read more on utility libraries](./11-libraries/)
 
 
-## Document ("DOM") Elements
+## Document ("DOM")
 Refer to the entire live browser page with: `document`. From there, you can search for elements that exist and manipulate them. 
 
-### Select a single element
+### Nodes
+
+[`Element`](https://developer.mozilla.org/en-US/docs/Web/API/Element) and the [`Document`](https://developer.mozilla.org/en-US/docs/Web/API/Document) are both technically a (subtype of) [`Node`](https://developer.mozilla.org/en-US/docs/Web/API/Node). Other `Node` subtypes are `Comment` and `Text`. A good [visual explanation of Node types in an HTML document can be found here](https://javascript.info/dom-nodes#an-example-of-the-dom).
+
+
+### Select a single Element
 
 ```javascript
 document.getElementById('submitBtn')  // Finds the HTML element with id="submitBtn"
@@ -185,7 +190,6 @@ allButtons.forEach(aBtn => {
   // Each ".btn" Element is now referred to as "aBtn" one-by-one because we declared it so in this function definition (above)
 })
 ```
-
 
 ### Common element properties
 
@@ -227,3 +231,10 @@ ele.addEventListener('click', event => {  })
 A list of [some comment Event types can be found here](https://developer.mozilla.org/en-US/docs/Web/Events).
 
 [Read more on events](./13-events/)
+
+
+## Timers
+
+Coming soon: setInterval/clearInterval, setTimeout/clearTimeout, requestAnimationFrame/cancelAnimationFrame
+
+[Read more on timers](./)
