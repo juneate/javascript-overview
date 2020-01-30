@@ -4,6 +4,31 @@
 
 Here we will keep an ongoing list of the logic and code we explore/review in class, categorized by topic.
 
+- [JavaScript Cheatsheet](#javascript-cheatsheet)
+  - [Miscellaneous](#miscellaneous)
+  - [Data types](#data-types)
+  - [Arithmetic operators](#arithmetic-operators)
+  - [Variables](#variables)
+  - [Template literals](#template-literals)
+  - [Functions](#functions)
+    - [Arrow Functions](#arrow-functions)
+  - [Object (literal)](#object-literal)
+  - [Array](#array)
+  - [Conditions](#conditions)
+  - [Loops](#loops)
+  - [Utility Libraries](#utility-libraries)
+    - [Math library](#math-library)
+  - [Document ("DOM")](#document-%22dom%22)
+    - [Nodes](#nodes)
+    - [Select a single Element](#select-a-single-element)
+    - [Selecting multiple elements at once](#selecting-multiple-elements-at-once)
+    - [Common element properties](#common-element-properties)
+    - [Physical dimensions of an Element](#physical-dimensions-of-an-element)
+  - [Event Listeners](#event-listeners)
+  - [Window](#window)
+  - [Timers](#timers)
+
+
 ## Miscellaneous
 - Single-line comments: `// comment!`
 - Multi-line comments: `/* comment! */`
@@ -243,7 +268,6 @@ ele.addEventListener('click', event => {  })
 A list of [some comment Event types can be found here](https://developer.mozilla.org/en-US/docs/Web/Events).
 
 [Read more on events](./13-events/)
-
 
 
 ## Window
