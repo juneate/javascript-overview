@@ -219,6 +219,18 @@ ele.classList.toggle(`highlight`)
 ele.setAttribute(`title`, `You're hovering over this element!`)
 ```
 
+### Physical dimensions of an Element
+
+```javascript
+// px sizes of content including padding and border
+ele.offsetWidth
+ele.offsetHeight
+
+// px sizes of content including padding (but not border)
+ele.clientWidth
+ele.clientHeight
+```
+
 [Read more on the document (object model)](./12-document/)
 
 
@@ -233,8 +245,16 @@ A list of [some comment Event types can be found here](https://developer.mozilla
 [Read more on events](./13-events/)
 
 
+
+## Window
+
+Coming soon: `window` properties, methods and common events
+
+[Read more on the window [coming soon]](./)
+
+
 ## Timers
 
 Coming soon: setInterval/clearInterval, setTimeout/clearTimeout, requestAnimationFrame/cancelAnimationFrame
 
-[Read more on timers](./)
+[Read more on timers [coming soon]](./)
