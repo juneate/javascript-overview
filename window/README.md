@@ -22,3 +22,17 @@ document.body.offsetHeight
 
 https://javascript.info/size-and-scroll-window
 -->
+
+<!-- 
+https://javascript.info/size-and-scroll-window#width-height-of-the-document
+
+ADDED: margin-top: 100px; padding-top: 50px; border-top: 25px solid black;
+
+document.body.scrollHeight
+5169
+document.documentElement.scrollHeight
+5344
+
+WHEN REMOVED THE VALUES ARE BOTH 5169 (175 dif)
+
+-->
