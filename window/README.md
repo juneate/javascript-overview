@@ -1,5 +1,5 @@
 a
-<!-- 
+
 document.documentElement.clientHeight
 440
 window.innerHeight
@@ -22,9 +22,9 @@ document.body.offsetHeight
 425
 
 https://javascript.info/size-and-scroll-window
--->
 
-<!-- 
+
+
 https://javascript.info/size-and-scroll-window#width-height-of-the-document
 
 ADDED: margin-top: 100px; padding-top: 50px; border-top: 25px solid black;
@@ -36,4 +36,3 @@ document.documentElement.scrollHeight
 
 WHEN REMOVED THE VALUES ARE BOTH 5169 (175 dif)
 
--->
