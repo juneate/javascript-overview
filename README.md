@@ -24,7 +24,8 @@ Here we will keep an ongoing list of the logic and code we explore/review in cla
     - [Selecting multiple elements at once](#selecting-multiple-elements-at-once)
     - [Common element properties](#common-element-properties)
     - [Physical dimensions of an Element](#physical-dimensions-of-an-element)
-  - [Event Listeners](#event-listeners)
+  - [Event listeners](#event-listeners)
+  - [Creating elements](#creating-elements)
   - [Window](#window)
   - [Timers](#timers)
 
@@ -187,6 +188,10 @@ Math.floor(5.5)  // 5, floor always rounds down
 ## Document ("DOM")
 Refer to the entire live browser page with: `document`. From there, you can search for elements that exist and manipulate them. 
 
+- `document`: represents the entire physical interface and all of it's functionality and parts
+- `document.documentElement`: The top level container (the `<html>` Element)
+- `document.body`: The container that holds the physical interface (the `<body>` Element)
+
 ### Nodes
 
 [`Element`](https://developer.mozilla.org/en-US/docs/Web/API/Element) and the [`Document`](https://developer.mozilla.org/en-US/docs/Web/API/Document) are both technically a (subtype of) [`Node`](https://developer.mozilla.org/en-US/docs/Web/API/Node). Other `Node` subtypes are `Comment` and `Text`. A good [visual explanation of Node types in an HTML document can be found here](https://javascript.info/dom-nodes#an-example-of-the-dom).
@@ -259,7 +264,7 @@ ele.clientHeight
 [Read more on the document (object model)](./12-document/)
 
 
-## Event Listeners
+## Event listeners
 Replace `ele` with a reference to the element you want to make clickable, and place the code to execute (on occurrence of the event) between the `{ }` callback (or "handler").
 
 ```javascript
@@ -269,6 +274,18 @@ A list of [some comment Event types can be found here](https://developer.mozilla
 
 [Read more on events](./13-events/)
 
+
+## Creating elements
+
+Two methods...
+insertAdjacent
+innerHTML
+
+
+```javascript
+document.createElement()
+
+```
 
 ## Window
 
