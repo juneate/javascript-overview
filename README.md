@@ -27,8 +27,12 @@ Here we will keep an ongoing list of the logic and code we explore/review in cla
     - [Physical dimensions of an Element](#physical-dimensions-of-an-element)
   - [Event listeners](#event-listeners)
   - [Creating elements](#creating-elements)
-  - [Window](#window)
+  - [Window (and document)](#window-and-document)
+    - [Dimensions](#dimensions)
+    - [Window scrolling](#window-scrolling)
+    - [Window Events](#window-events)
   - [Timers](#timers)
+    - [Window framerate timer](#window-framerate-timer)
 
 
 ## Miscellaneous
@@ -247,7 +251,7 @@ Each elements in a document (an Object of type `Element` in JavaScript) has spec
 For example, given an element (HTML) structured as such: `<h1 class="heading"></h1>`. After selecting the element (store the reference as `ele`), here are a few properties or methods to perform common actions.
 
 ```javascript
-const ele = document.querySelector('.heading')  // Select an element, store the reference
+const ele = document.querySelector('.test')  // Select an element, store the reference
 
 // Modify the content between the opening/closing tags (treat HTML as text)
 ele.textContent = `Hello, world!`
@@ -264,13 +268,17 @@ ele.classList.add(`highlight`)
 ele.classList.remove(`highlight`)
 ele.classList.toggle(`highlight`)
 
-// Modify or add an attribute to an element (title="Hello world")
-ele.setAttribute(`title`, `Hello world`)
+// HTML element attributes (get and set)
+ele.setAttribute(`title`, `Hello world`)  // Modify/add an attribute (title="Hello world")
+ele.getAttribute(`title`)  // Returns the String: Hello world
 ```
+
 
 ### Physical dimensions of an Element
 
 ```javascript
+const ele = document.querySelector('.test')  // Select an element, store the reference
+
 // px sizes of content including padding and border
 ele.offsetWidth
 ele.offsetHeight
@@ -278,7 +286,24 @@ ele.offsetHeight
 // px sizes of content including padding (but not border)
 ele.clientWidth
 ele.clientHeight
+
+// px sizes of the element as an exact decimal
+ele.getBoundingClientRect().height
+ele.getBoundingClientRect().width
+
+// px measurements to an element relative to the document
+ele.offsetTop
+ele.offsetRight
+ele.offsetBottom
+ele.offsetLeft
+
+// px measurement (decimal) relative to the window (viewport)
+ele.getBoundingClientRect().top
+ele.getBoundingClientRect().right
+ele.getBoundingClientRect().bottom
+ele.getBoundingClientRect().left
 ```
+
 
 [Read more on the document (object model)](./12-document/)
 
@@ -306,15 +331,89 @@ document.createElement()
 
 ```
 
-## Window
+## Window (and document)
 
-Coming soon: `window` properties, methods and common events
+The browser is referred to as the `window`. The window holds the `document.documentElement` (aka, the `<html>` element). 
+
+In addition to controlling the browser's `history` and `console` (amongst other key components), the `window` (and the `documentElement`) can be used to help with interaction by using some of its key properties or methods:
+
+### Dimensions
+
+```javascript
+let $doc = document.documentElement  // Select the <html> element (the biggest wrapper there is)
+
+// Window, including scrolls bars (window's outside perimeter)
+let windowHsc = window.innerHeight  // window height (px)
+let windowWsc = window.innerWidth  // window width (px) 
+
+// Window, not including scrolls bars (inside of the scroll bars)
+let windowH = $doc.clientHeight  // window height (px)
+let windowW = $doc.clientWidth  // window width (px)
+// ** this is weird one! it's obtaining the windows true inner dimensions via the documentElement
+
+// Dimensions of any element (including content and padding, but not border or margin)
+let documentH = $doc.scrollHeight
+let documentW = $doc.scrollWidth
+```
+
+### Window scrolling
+
+```javascript
+// Get the current window scroll position (px)
+let scrollPxVert = window.scrollY
+let scrollPxHorz = window.scrollX
+
+// Scroll to an element
+ele.scrollIntoView()  // hard scroll the window
+ele.scrollIntoView({ behavior:'smooth' })  // soft scroll the window
+
+// Scroll to a coordinate in the document
+window.scrollTo(0, 0)  // hard scroll the window (x, y)
+window.scrollTo({ left:0, top:0, behavior:'smooth' })  // soft scroll the window
+```
+
+
+### Window Events
+
+A few common window events are: `'load'`, `'scroll'`, `'resize'`, `'hashchange'`
+
 
 [Read more on the window [coming soon]](./)
 
 
 ## Timers
 
+### Window framerate timer
+
+```javascript
+// use the browser's animation framerate to do something over and over again
+let count = 0;  // optional counter
+
+// Function to run over and over (call it whatever you want)
+const loop = () => {
+
+  // Check a condition (here, a max number of times it should run: 10)
+  // If the limit was hit, escape immediately
+  if (++count > 10) return   // "return" quits the function
+
+  // Do whatever the actions is
+  console.log(`Iteration number: ${count}`)
+
+  // Loop again if we got this far!
+  window.requestAnimationFrame(loop)
+}
+
+// Start looping!
+window.requestAnimationFrame(loop)
+```
+
+
 Coming soon: setInterval/clearInterval, setTimeout/clearTimeout, requestAnimationFrame/cancelAnimationFrame
 
 [Read more on timers [coming soon]](./)
+
+
+
+
+
+
