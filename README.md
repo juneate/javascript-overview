@@ -15,10 +15,11 @@ Here we will keep an ongoing list of the logic and code we explore/review in cla
   - [Object (literal)](#object-literal)
   - [Array](#array)
   - [Conditions](#conditions)
+    - [Comparison operators](#comparison-operators)
   - [Loops](#loops)
   - [Utility Libraries](#utility-libraries)
     - [Math library](#math-library)
-  - [Document ("DOM")](#document-%22dom%22)
+  - [Document (DOM)](#document-dom)
     - [Nodes](#nodes)
     - [Select a single Element](#select-a-single-element)
     - [Selecting multiple elements at once](#selecting-multiple-elements-at-once)
@@ -157,7 +158,25 @@ As with Objects, the variable that Arrays are assigned to, hold a _reference_ to
 
 ## Conditions
 
-Coming soon: control statements, ternary, case/switch statements
+A condition can be checked using an `if` statement. If the "condition" is `true`, the block will run, if `false` (or "falsy") it will evaluate the next condition (if one exists).
+
+```javascript
+if ( condition ) {
+  // the initial condition
+} else if ( condition ) {
+  // (optional) condition(s) can be added after the initial "if"
+} else {
+  // (optional) "default" condition
+}
+```
+
+### Comparison operators
+
+*Comparison operators* are binary operators that compare their left and right value or variable, resulting in a `Booleans` (`true` or `false`): 
+- `==` (equal value), `!=` (not equal to), `<` (less than), `>` (greater than), `<=` (less than or equal to), `>=` (greater than or equal to)
+- Comparing both value _and_ type: `===` (equal in value and type), `!==` (not equal in type or value)
+
+Other condition evaluation techniques: ternary, case/switch statements
 
 [Read more on conditions](./09-conditions/)
 
@@ -185,7 +204,7 @@ Math.floor(5.5)  // 5, floor always rounds down
 [Read more on utility libraries](./11-libraries/)
 
 
-## Document ("DOM")
+## Document (DOM)
 Refer to the entire live browser page with: `document`. From there, you can search for elements that exist and manipulate them. 
 
 - `document`: represents the entire physical interface and all of it's functionality and parts
@@ -245,8 +264,8 @@ ele.classList.add(`highlight`)
 ele.classList.remove(`highlight`)
 ele.classList.toggle(`highlight`)
 
-// Modify or add an attribute to an element
-ele.setAttribute(`title`, `You're hovering over this element!`)
+// Modify or add an attribute to an element (title="Hello world")
+ele.setAttribute(`title`, `Hello world`)
 ```
 
 ### Physical dimensions of an Element
