@@ -321,15 +321,10 @@ A list of [some comment Event types can be found here](https://developer.mozilla
 
 ## Creating elements
 
-Two methods...
-insertAdjacent
-innerHTML
+Info on `insertAdjacent`, `innerHTML` and `createElement` coming soon.
 
+[Read more on creating elements [coming soon]](./)
 
-```javascript
-document.createElement()
-
-```
 
 ## Window (and document)
 
